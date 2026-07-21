@@ -476,6 +476,7 @@ static NSString *CDMachOFileMagicNumberDescription(uint32_t magic) {
         }
         if (segment == nil){
             DLog(@"Error: Cannot find offset for address 0x%08lx in dataOffsetForAddress:", address);
+            DLog(@"%@", NSThread.callStackSymbols);
             return 0;
             //exit(5);
         }
